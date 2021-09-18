@@ -1,0 +1,336 @@
+html,
+body {
+    scroll-behavior: smooth;
+    background: rgb(92, 115, 121);
+    background-color: rgb(53 53 53);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgb(61, 61, 61); 
+    border-radius: 10px;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background:  #f1f1f1;; 
+    border-radius: 10px;
+  }
+
+.header-a {
+    float: left;
+    color: white !important;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.header-a:hover {
+    background-color: #ddd;
+    color: rgb(71, 68, 68) !important;
+}
+
+.imglogo {
+    width: 38px;
+    height: 25px;
+}
+
+.apresentacao {
+    /* background-image: url(./imgs/apresentacao.png); */
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-attachment: local;
+    text-align: center;
+    background-size: 100% 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 85% 85% / 30%;
+    padding-left: 0px;
+    padding-right: 0px;
+    height: 400px;
+    margin-bottom: 30px;
+}
+
+.overlay {
+    --bs-gutter-x: 0rem;
+    width: 100%;
+    height: 100%;
+    padding: 100px;
+    padding-top: 75px;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #333;
+    background-image: linear-gradient(179deg, #212529 10%, #ffffff1f 100%);
+
+}
+
+.apresentacao .h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 80px;
+    margin-bottom: 30px;
+    font-weight: 900;
+}
+
+.apresentacao h3 {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.apresentacao p {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 30px;
+    font-weight: 900;
+}
+
+.apresentacao a {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: #333;
+    background: #fff;
+    margin-bottom: 50px;
+    text-decoration: none;
+    box-shadow: 0 3px 20px 0 #0000003b;
+}
+
+.apresentacao a:hover {
+    cursor: pointer;
+}
+
+.titulo-sessao {
+    color: white;
+    font-size: 3em;
+    font-weight: 900;
+    padding: 0 0 20px 0;
+}
+
+.sessao-content p {
+    font-size: 1.25em;
+    padding: 0 0 20px 0;
+    color: white;
+    text-align: justify;
+}
+
+@media (max-width: 767.98px) { 
+    .titulo-sessao {
+        font-size: 2.5em;
+        font-weight: 800;
+        padding: 0 0 20px 0;
+    }
+}
+
+@media (max-width: 575.98px) { 
+    .titulo-sessao {
+        font-size: 2.5em;
+        font-weight: 800;
+        padding: 0 0 20px 0;
+        text-align: center !important;
+    }
+    .sessao-content p {
+        font-size: 1em;
+        padding: 0 0 20px 0;
+        color: white;
+    }
+}
+
+.card-temaki {
+    border-radius: 16px;
+    margin: 10px;
+    margin-left: 0px;
+    margin-right: 10px;
+    width: 250px;
+    height: 250px;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+        0px 5px 8px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+
+}
+
+.info {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: #fff;
+    transform: translateY(100%) translateY(-118px) translateZ(0);
+    transition: transform 0.5s ease-out;
+}
+
+.info:before {
+    z-index: -1;
+    display: block;
+    position: absolute;
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    filter: blur(10px);
+    background-size: cover;
+    opacity: 0.25;
+    transform: translateY(-100%) translateY(88px) translateZ(0);
+    transition: transform 0.5s ease-out;
+}
+
+.card-temaki:hover .info,
+.card-temaki:hover .info:before {
+    transform: translateY(0) translateZ(0);
+}
+
+.title {
+    margin: 0;
+    padding-top: 16px;
+    padding-bottom: 14px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-size: 20px;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.description {
+    margin: 0;
+    padding: 0 24px 24px;
+    font-size: 15px;
+    line-height: 1.5;
+    ;
+}
+
+.info>p {
+    color: #111;
+}
+
+.cards-sessao {
+    margin-bottom: 100px;
+    padding: 100px 0;
+}
+
+@media (min-width: 576px) {
+    .card-group.card-group-scroll {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .card-group.card-group-scroll {
+        display: flex;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+}
+
+@media (max-width: 1400px) {
+    .card-temaki {
+        min-width: 200px;
+        height: 200px;
+    }
+    .info {
+        height: 200px;
+        transform: translateY(100%) translateY(-60px) translateZ(0);
+    }
+    
+    .title {
+        margin: 0;
+        padding-top: 18px;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-bottom: 12px;
+        font-size: 17px;
+    }
+    
+    .description {
+        padding: 0 18px 18px;
+        font-size: 12px;
+    } 
+}
+
+@media (max-width: 1200px) {
+    .card-temaki {
+        margin: 10px;
+        margin-left: 0px;
+        margin-right: 10px;
+        min-width: 150px;
+        height: 150px;
+    }
+    .info {
+        width: 100%;
+        height: 150px;
+        transform: translateY(100%) translateY(-45px) translateZ(0);
+    }
+    
+    .title {
+        padding-top: 10px;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-bottom: 12px;
+        font-size: 14px;
+    }
+    
+    .description {
+        padding: 0 18px 18px;
+        font-size: 9.5px;
+    }
+    
+}
+
+@media (max-width: 1199.98px) {
+    
+    .title {
+        font-size: 12px;
+    }
+
+    .description {
+        margin: 0;
+        padding: 0 18px 18px;
+        font-size: 9px;
+        line-height: 1.5;
+    }
+    
+}
+
+
+#temaki-salmao-cebolinha {
+    background-image: url(./imgs/temaki_salmao.jpg);
+    background-size: 100% 80%;
+    background-position: top;
+}
+
+#temaki-salmao-ricota {
+    background-image: url(./imgs/temaki_salmao_ricota.jpg);
+    background-size: 100% 80%;
+    background-position: top;
+}
+
+#temaki-skin {
+    background-image: url(./imgs/temaki_skin.jpg);
+    background-size: 100% 80%;
+    background-position: top;
+}
+
+#temaki-salmao-cream-cheese {
+    background-image: url(./imgs/temaki_salmao_cream_cheese.jpg);
+    background-size: 100% 80%;
+    background-position: top;
+}
+
+#temaki-salmao-pepino {
+    background-image: url(./imgs/temaki_salmao_pepino.jpg);
+    background-size: 100% 80%;
+    background-position: top;
+}
+
+#temaki-skin-descricao {
+    padding-top: 20px;
+}
