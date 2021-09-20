@@ -47,16 +47,9 @@ body {
     height: 25px;
 }
 
-img{
+img {
     margin-bottom: 50px;
 }
-
-@media (max-width: 1498px) {
-    img{
-        margin-bottom: 70px;
-    }
-}
-
 
 .apresentacao {
     /* background-image: url(./imgs/apresentacao.png); */
@@ -135,28 +128,7 @@ img{
     text-align: justify;
 }
 
-@media (max-width: 767.98px) {
-    .titulo-sessao {
-        font-size: 2.5em;
-        font-weight: 800;
-        padding: 0 0 20px 0;
-    }
-}
 
-@media (max-width: 575.98px) {
-    .titulo-sessao {
-        font-size: 2.5em;
-        font-weight: 800;
-        padding: 0 0 20px 0;
-        text-align: center !important;
-    }
-
-    .sessao-content p {
-        font-size: 1em;
-        padding: 0 0 20px 0;
-        color: white;
-    }
-}
 
 .card-temaki {
     border-radius: 16px;
@@ -232,100 +204,6 @@ img{
 .card-group {
     margin-bottom: 1rem;
     ;
-}
-
-@media (min-width: 576px) {
-    .card-group.card-group-scroll {
-        overflow-x: auto;
-        flex-wrap: nowrap;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .card-group.card-group-scroll {
-        display: flex;
-        overflow-x: auto;
-        flex-wrap: nowrap;
-    }
-
-    .overlay {
-        padding: 40px;
-    }
-
-    .titulo-sessao {
-        font-size: 2em;
-    }
-}
-
-@media (max-width: 1400px) {
-    .card-temaki {
-        min-width: 200px;
-        height: 200px;
-    }
-
-    .info {
-        height: 200px;
-        transform: translateY(100%) translateY(-60px) translateZ(0);
-    }
-
-    .title {
-        margin: 0;
-        padding-top: 18px;
-        padding-left: 18px;
-        padding-right: 18px;
-        padding-bottom: 12px;
-        font-size: 17px;
-    }
-
-    .description {
-        padding: 0 18px 18px;
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .card-temaki {
-        margin: 10px;
-        margin-left: 0px;
-        margin-right: 10px;
-        min-width: 150px;
-        height: 150px;
-    }
-
-    .info {
-        width: 100%;
-        height: 150px;
-        transform: translateY(100%) translateY(-45px) translateZ(0);
-    }
-
-    .title {
-        padding-top: 10px;
-        padding-left: 18px;
-        padding-right: 18px;
-        padding-bottom: 12px;
-        font-size: 14px;
-    }
-
-    .description {
-        padding: 0 18px 18px;
-        font-size: 9.5px;
-    }
-
-}
-
-@media (max-width: 1199.98px) {
-
-    .title {
-        font-size: 12px;
-    }
-
-    .description {
-        margin: 0;
-        padding: 0 18px 18px;
-        font-size: 9px;
-        line-height: 1.5;
-    }
-
 }
 
 
@@ -412,21 +290,9 @@ img{
     opacity: 0.8;
 }
 
-@media (max-width:767px) {
-    .footer-dark .item:not(.social) {
-        text-align: center;
-        padding-bottom: 20px;
-    }
-}
 
 .footer-dark .item.text {
     margin-bottom: 36px;
-}
-
-@media (max-width:767px) {
-    .footer-dark .item.text {
-        margin-bottom: 0;
-    }
 }
 
 .footer-dark .item.text p {
@@ -438,16 +304,6 @@ img{
     text-align: center;
 }
 
-@media (max-width:991px) {
-    .footer-dark .item.social {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .logoinfo {
-        display: none;
-    }
-}
 
 .footer-dark .item.social>a {
     font-size: 20px;
@@ -485,7 +341,52 @@ img{
     min-width: 75px;
 }
 
+.heade-tabela {
+    background-color: linear-gradient(180deg, #212529 10%, #000000e6 100%);
+}
+
+@media (max-width: 1498px) {
+    img {
+        margin-bottom: 70px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .titulo-sessao {
+        font-size: 2.5em;
+        font-weight: 800;
+        padding: 0 0 20px 0;
+    }
+}
+
 @media (max-width: 575.98px) {
+    .titulo-sessao {
+        font-size: 2.5em;
+        font-weight: 800;
+        padding: 0 0 20px 0;
+        text-align: center !important;
+    }
+
+    .sessao-content p {
+        font-size: 1em;
+        padding: 0 0 20px 0;
+        color: white;
+    }
+
+    .card-group.card-group-scroll {
+        display: flex;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+
+    .overlay {
+        padding: 40px;
+    }
+
+    .titulo-sessao {
+        font-size: 2em;
+    }
+
     .list-produtos {
         display: flex !important;
         overflow-x: auto;
@@ -503,9 +404,105 @@ img{
         width: 2px;
         height: 2px;
     }
+}
+
+@media (min-width: 576px) {
+    .card-group.card-group-scroll {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+}
+
+
+@media (max-width: 1400px) {
+    .card-temaki {
+        min-width: 200px;
+        height: 200px;
+    }
+
+    .info {
+        height: 200px;
+        transform: translateY(100%) translateY(-60px) translateZ(0);
+    }
+
+    .title {
+        margin: 0;
+        padding-top: 18px;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-bottom: 12px;
+        font-size: 17px;
+    }
+
+    .description {
+        padding: 0 18px 18px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .card-temaki {
+        margin: 10px;
+        margin-left: 0px;
+        margin-right: 10px;
+        min-width: 150px;
+        height: 150px;
+    }
+
+    .info {
+        width: 100%;
+        height: 150px;
+        transform: translateY(100%) translateY(-45px) translateZ(0);
+    }
+
+    .title {
+        padding-top: 10px;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-bottom: 12px;
+        font-size: 14px;
+    }
+
+    .description {
+        padding: 0 18px 18px;
+        font-size: 9.5px;
+    }
 
 }
 
-.heade-tabela {
-    background-color: linear-gradient(180deg, #212529 10%, #000000e6 100%);
+@media (max-width: 1199.98px) {
+
+    .title {
+        font-size: 12px;
+    }
+
+    .description {
+        margin: 0;
+        padding: 0 18px 18px;
+        font-size: 9px;
+        line-height: 1.5;
+    }
+
+}
+
+@media (max-width:767px) {
+    .footer-dark .item:not(.social) {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .footer-dark .item.text {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width:991px) {
+    .footer-dark .item.social {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .logoinfo {
+        display: none;
+    }
 }
