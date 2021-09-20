@@ -8,14 +8,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <img class="imglogo" style="vertical-align:middle" src="./imgs/BJ.jpg"
-                    alt="Bandeira Brasileira e Japonesa">
                 <span class="navbar-brand mb-0 h1">&nbspTemaki é Brasileiro! </span>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -25,19 +24,19 @@
                 <div class="collapse navbar-collapse justify-content-lg-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link header-a" href="#header">Inicio</a>
+                            <a class="nav-link header-a" href="#">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link header-a" href="#titulo-temakis">Temakis</a>
+                            <a class="nav-link header-a" href="#temakis">Temakis</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link header-a" href="#titulo-precos">Preços</a>
+                            <a class="nav-link header-a" href="#precos">Preços</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link header-a" href="#titulo-sobre">Sobre</a>
+                            <a class="nav-link header-a" href="#sobre">Sobre</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link header-a" href="#footer-a">Contato</a>
+                            <a class="nav-link header-a" href="#contato">Contato</a>
                         </li>
                     </ul>
                 </div>
@@ -49,19 +48,22 @@
         <section id="apresentacao" class="container-fluid apresentacao overlay">
             <div class="container">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-lg-6 col-md-12">
                         <h1>Temaki É Brasileiro!</h1>
                         <h3>Restaurante Brasileiro</h3>
                         <p>O Temaki pode até ser uma criação japonesa mas Temakerias são brasileiras!</p>
                         <br>
-                        <a href="#titulo-sobre">Conheça-nos</a>
+                        <a href="#titulo-sobre" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Faça seu
+                            pedido</a>
                     </div>
-                    <div class="col-6 align-middle">
+                    <div class="col-lg-6 align-middle logoinfo">
                         <img src="./imgs/TemakariaLogotipo2.png" alt="">
+                        <br>
+                        <a href="#titulo-sobre">Conheça-nos</a>
                     </div>
                 </div>
             </div>
-            
+
         </section>
 
         <section id="sobre" class="container sessao-content">
@@ -149,13 +151,230 @@
 
                 </div>
         </section>
+
+        <section id="precos" class="container" style="margin-bottom: 20px;">
+            <div class="row">
+                <div class="col d-flex justify-content-lg-start justify-content-center">
+                    <label class="titulo-sessao">Tabela de Preços</label>
+                </div>
+            </div>
+
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="table-dark header-tabela">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Pequeno</th>
+                            <th scope="col">Médio</th>
+                            <th scope="col">Grande</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="colortable">
+                            <th scope="row">1</th>
+                            <td class="td-produto">Temaki de Salmão com Cebolinha</td>
+                            <td class="td-precos">R$ 14,99</td>
+                            <td class="td-precos">R$ 19,99</td>
+                            <td class="td-precos">R$ 21,99</td>
+                        </tr>
+                        <tr class="colortable">
+                            <th scope="row">2</th>
+                            <td>Temaki de Salmão com Ricota</td>
+                            <td>R$ 15,99</td>
+                            <td>R$ 19,99</td>
+                            <td>R$ 21,99</td>
+                        </tr>
+                        <tr class="colortable">
+                            <th scope="row">3</th>
+                            <td>Temaki Skin</td>
+                            <td>R$ 14,99</td>
+                            <td>R$ 18,99</td>
+                            <td>R$ 21,99</td>
+                        </tr>
+                        <tr class="colortable">
+                            <th scope="row">4</th>
+                            <td>Temaki de Salmão com Cream Cheese</td>
+                            <td>R$ 13,99</td>
+                            <td>R$ 17,99</td>
+                            <td>R$ 21,99</td>
+                        </tr>
+                        <tr class="colortable">
+                            <th scope="row">5</th>
+                            <td>Temaki de Salmão com Pepino</td>
+                            <td>R$ 15,99</td>
+                            <td>R$ 17,99</td>
+                            <td>R$ 21,99</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
     </main>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Adicionar Pedido</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="GET">
+                        <h5 class="modal-title" id="staticBackdropLabel"
+                            style="text-align: center; margin-bottom: 10px;">Informações Pessoais</h5>
+                        <div class="mb-3">
+                            <div class="form-floating">
+                                <input class="form-control col-form-label" id="floatingnome" name="nome"></input>
+                                <label for="floatingnome">Nome Completo</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="form-floating">
+                                <input class="form-control col-form-label" id="floatingcep" name="cep"></input>
+                                <label for="floatingcep">CEP</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-floating">
+                                <input class="form-control col-form-label" id="floatinglogradouro"
+                                    name="logradouro"></input>
+                                <label for="floatinglogradouro">Logradouro</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-floating">
+                                <input class="form-control col-form-label" id="floatingreferencia"
+                                    name="referencia"></input>
+                                <label for="floatingreferencia">Referencia</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-floating">
+                                        <input class="form-control col-form-label" id="floatingbairro"
+                                            name="bairro"></input>
+                                        <label for="loatingbairro">Bairro</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-floating">
+                                        <input class="form-control col-form-label" id="floatingcidade"
+                                            name="cidade"></input>
+                                        <label for="floatingcidade">Cidade</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h5 class="modal-title" id="staticBackdropLabel" style="text-align: center; margin-top: 20px;">
+                            Pedido</h5>
+                        <div class="mb-3">
+                            <div class="row">
+                                <label for="formGroupExampleInput" class="form-label"
+                                    style="text-align: center;">Escolha seu Temaki</label>
+                            </div>
+                            <div class="list-produtos d-flex justify-content-around">
+                                <input type="radio" class="btn-check" name="produto_nome" id="option1"
+                                    value="temaki-salmao-cebolinha" autocomplete="off">
+                                <label id="temaki-salmao-cebolinha" class="btn btn-dark select-btn"
+                                    for="option1"></label>
+
+                                <input type="radio" class="btn-check" name="produto_nome" id="option2"
+                                    value="temaki-salmao-ricota" autocomplete="off">
+                                <label id="temaki-salmao-ricota" class="btn btn-dark select-btn" for="option2"></label>
+
+                                <input type="radio" class="btn-check" name="produto_nome" id="option3"
+                                    value="temaki-skin" autocomplete="off">
+                                <label id="temaki-skin" class="btn btn-dark select-btn" for="option3"></label>
+
+                                <input type="radio" class="btn-check" name="produto_nome" id="option4"
+                                    value="temaki-salmao-cream-cheese" autocomplete="off">
+                                <label id="temaki-salmao-cream-cheese" class="btn btn-dark select-btn"
+                                    for="option4"></label>
+
+                                <input type="radio" class="btn-check" name="produto_nome" id="option5"
+                                    value="temaki-salmao-pepino" autocomplete="off">
+                                <label id="temaki-salmao-pepino" class="btn btn-dark select-btn" for="option5"></label>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col">
+                                    <select name="tamanho" class="form-select" aria-label="Default select example">
+                                        <option selected>Tamanho</option>
+                                        <option value="pequeno">Pequeno</option>
+                                        <option value="medio">Médio</option>
+                                        <option value="grande">Grande</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <input name="qtd" type="number" class="form-control"/ min="1" max="5" value="1">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-dark" data-bs-dismiss="modal">Adicionar Pedido</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer id= "contato" class="footer-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#temakis">Temakis</a></li>
+                        <li><a href="#precos">Preços</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Números</h3>
+                    <ul>
+                        <li>(93) 9 91234567</li>
+                        <li>(93) 9 98910111</li>
+                        <li>(93) 9 92131415</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 item text">
+                    <h3>Temaki é Brasileiro!</h3>
+                    <p>Buscamos sempre a satisfação total dos nossos clientes. E para isso contamos com
+                        profissionais qualificados e experientes, preservando a tradição, o atendimento
+                        personalizado e o respeito. Deixe seu feedback em nossas redes sociais!</p>
+                </div>
+                <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
+                            class="icon ion-social-twitter"></i></a><a href="#"><i
+                            class="icon ion-social-whatsapp"></i></a><a href="#"><i
+                            class="icon ion-social-instagram"></i></a></div>
+            </div>
+            <p class="copyright">Temaki é Brasileiro! © 2021</p>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
 
 </body>
+
+
 
 
 
