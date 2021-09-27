@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+    <div class="container-forca">
+        <div class="forca">
+            <div class="principal">
+                <div class="container">
+                    <h1 id="cabeca" class="cabeca">O</h1>
+                </div>
+                <div class="container">
+                    <h1 id="brsesquerdo" class="brsesquerdo">/</h1>
+                    <h1 id="corpo" class="corpo">|</h1>
+                    <h1 id="brsdireito" class="brsdireito">\</h1>
+                </div>
+                <div class="container">
+                    <h1 id="pernaesquerda" class="pernaesquerda">/</h1>
+                    <h1 id="pernadireita" class="pernadireita">\</h1>
+                </div>
+            </div>
+
+        </div>
+        <div class="menus">
+            <div id="div-buttom-iniciar" class="div-iniciar">
+                <button id="iniciar" class="w3-button w3-xxlarge w3-black w3-round-xxlarge">Iniciar</button>
+            </div>
+            <div id="div-p-iniciar" class="div-iniciar">
+                <div>
+                    <p>No console existe uma cola, use "F12" antes de clicar em iniciar.</p>
+                    <p>Obs: Sempre contará como chute a primeira letra digitada, não importa o tamanho da entrada!</p>
+                </div>
+            </div>
+            <div class="palavra">
+                <div class="chutes" id="chutes">
+                    Chutes:
+                </div>
+            </div>
+            <div id="palavra" class="palavra">
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+</body>
+<script>
+    async function getInfo() {
+        restaurarDivs();
+        restaurarBoneco();
+        async function getPalavra() {
+            return new Promise((resolve) => {
+                let xmlHttp = new XMLHttpRequest();
+                xmlHttp.open("GET", "https://api.dicionario-aberto.net/random", true);
+                xmlHttp.onload = function() {
+                    resolve(JSON.parse(xmlHttp.responseText).word);
+                }
+                xmlHttp.send(null);
+            })
+
+        }
+
+        async function getDescricao(palavra) {
+            return new Promise((resolve) => {
+                let xmlHttp = new XMLHttpRequest();
+                xmlHttp.open("GET", `https://api.dicionario-aberto.net/word/${palavra}/1`, true);
+                xmlHttp.onload = function() {
+                    let response = JSON.parse(xmlHttp.responseText)[0].xml;
+                    parser = new DOMParser();
+                    let text = parser.parseFromString(response, "text/xml").getElementsByTagName(
+                            "def")[0]
+                        .childNodes[0]
+                        .nodeValue;
+                    let tipo = parser.parseFromString(response, "text/xml").getElementsByTagName(
+                            "gramGrp")[
+                            0]
+                        .childNodes[0].nodeValue;
+                    let definicao = {
+                        text: text,
+                        tipo: tipo
+                    }
+                    resolve(definicao);
+                }
+                xmlHttp.send(null);
+
+            })
+
+        }
+
+        function preencheEspaco(tamanho) {
+            let i = 0
+            do {
+                document.getElementById("palavra").innerHTML += `<h1 id = "${i}"> _</h1>`;
+                i++;
+            } while (i < tamanho);
+        }
+
+        async function alterarEspaco(posicao, letra) {
+            return new Promise((resolve) => {
+                document.getElementById(posicao).innerHTML = `${letra}`;
+                resolve(document.getElementById(posicao).innerHTML = `${letra}`);
+            })
+        }
+
+        async function preencheErros() {
+            document.getElementById(posicao).innerHTML = `${letra}`
+        }
+
+        function removerAcentosEspaco(str) {
+            return str.normalize("NFD").replace(/[^a-zA-Zs]/g, "");
+        }
+
+        function temChute(skills) {
+            return skills.includes("JavaScript");
+        }
+
+        function restaurarIniciar() {
+            document.getElementById("div-buttom-iniciar").style.display = "block";
+            document.getElementById("div-p-iniciar").style.display = "block";
+            document.getElementById("chutes").style.display = "none";
+            document.getElementById("palavra").innerHTML = "";
+        }
+
+        let palavra = await getPalavra();
+        let temp = palavra
+        palavra = removerAcentosEspaco(palavra);
+        preencheEspaco(palavra.length)
+        let definicao = await getDescricao(temp);
+
+
+        console.log("Cola: ", palavra)
+        let tipo = "";
+
+        if (definicao.tipo.includes('adj.')) {
+            tipo = "Adjetivo";
+        } else if (definicao.tipo.includes('interj.')) {
+            tipo = "Interjeição";
+        } else {
+            tipo = "Substantivo";
+        }
+
+        if (definicao.tipo.includes('m.')) {
+            tipo += " Masculino";
+        }
+
+        if (definicao.tipo.includes('f.')) {
+            tipo += " Feminino";
+        }
+
+        if (definicao.tipo.includes('pl.')) {
+            tipo += " Plural";
+        }
+        if (definicao.tipo.includes('loc.')) {
+            tipo += " Locução Adverbial";
+        }
+
+        let i = 0;
+        const arraypalavra = Array.from(palavra);
+        const arraychute = new Array(arraypalavra.length)
+        const chutes = []
+        let erros = 0
+
+
+        function sleep(ms) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve();
+                }, ms);
+            })
+        }
+
+        function temLetraNoArray(letra, array) {
+            let temLetra = false
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] == letra) {
+                    temLetra = true
+                    arraychute[i] = letra;
+                    alterarEspaco(i, letra);
+                }
+            }
+            return temLetra
+        }
+
+        function restaurarBoneco() {
+            document.getElementById("cabeca").style.display = "none";
+            document.getElementById("corpo").style.display = "none";
+            document.getElementById("brsesquerdo").style.display = "none";
+            document.getElementById("brsdireito").style.display = "none";
+            document.getElementById("pernaesquerda").style.display = "none";
+            document.getElementById("pernadireita").style.display = "none";
+        }
+
+        function restaurarDivs() {
+            document.getElementById("div-buttom-iniciar").style.display = "none";
+            document.getElementById("div-p-iniciar").style.display = "none";
+            document.getElementById("chutes").style.display = "block";
+            document.getElementById("chutes").innerHTML = "Chutes: ";
+            document.getElementById("palavra").innerHTML = "";
+        }
+
+        let letra;
+        while ((JSON.stringify(arraypalavra) !== JSON.stringify(arraychute)) && (erros < 6)) {
+
+            letra = prompt(`Tamanho da palavra: ${palavra.length} letras\nClasse gramatical: ${tipo}\n\nDica:${definicao.text}`);
+
+            if (letra == null) {
+                break;
+            } else {
+                letra = letra.toLowerCase().charAt(0);
+                letra = letra.replace(/[^a-zA-Z]/g, '');
+                console.log("Letra chutada: ", letra)
+                if (letra == '') {
+                    alert("Entrada Inválida")
+                    continue;
+                }
+
+                const temLetra = temLetraNoArray(letra, arraypalavra)
+                if (chutes.includes(letra)) {
+                    alert(`Letra "${letra}" ja chutada!`);
+                    continue;
+                }
+                if (!temLetra) {
+                    erros += 1
+                    switch (erros) {
+                        case 1:
+                            document.getElementById("cabeca").style.display = "block";
+                            break;
+                        case 2:
+                            document.getElementById("corpo").style.display = "block";
+                            break;
+                        case 3:
+                            document.getElementById("brsesquerdo").style.display = "block";
+                            break;
+                        case 4:
+                            document.getElementById("brsdireito").style.display = "block";
+                            break;
+                        case 5:
+                            document.getElementById("pernaesquerda").style.display = "block";
+                            break;
+                        case 6:
+                            document.getElementById("pernadireita").style.display = "block";
+                            break;
+                    }
+                }
+
+
+
+                chutes.push(letra)
+                document.getElementById("chutes").innerHTML += ` ${letra}`
+
+                await sleep(1);
+            }
+
+
+
+        }
+
+        if (letra == null) {
+            //getInfo();
+            restaurarBoneco();
+            restaurarDivs();
+            restaurarIniciar();
+        } else {
+            if (erros >= 6) {
+                alert("E MORREU...");
+                let confirmou = confirm("Gostaria de voltar a jogar?");
+
+                if (confirmou) {
+                    getInfo();
+                } else {
+                    restaurarBoneco();
+                    restaurarDivs();
+                    restaurarIniciar();
+                }
+            } else {
+                alert("ACERTOU MISERAVI")
+                let confirmou = confirm("Gostaria de voltar a jogar?");
+
+                if (confirmou) {
+                    getInfo();
+                } else {
+                    restaurarBoneco();
+                    restaurarDivs();
+                    restaurarIniciar();
+                }
+            }
+        }
+
+
+
+
+    }
+
+
+    document.getElementById("iniciar").addEventListener("click", function(event) {
+        getInfo();
+    }, false);
+
+</script>
+
+</html>

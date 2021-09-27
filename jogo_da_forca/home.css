@@ -1,0 +1,103 @@
+body {
+    /* overflow-x: auto; */
+}
+
+.container {
+    display: flex;
+    height: 60px;
+    justify-content: center;
+}
+
+.cabeca {
+    display: none;
+    margin: 0px;
+    font-size: 55px;
+}
+
+.corpo {
+    display: none;
+    margin: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 55px;
+}
+
+.brsesquerdo {
+    display: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 55px;
+}
+
+.brsdireito {
+    display: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 55px;
+}
+
+.pernadireita {
+    display: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 55px;
+}
+
+.pernaesquerda {
+    display: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 55px;
+}
+
+
+
+.principal {
+    margin-top: 145px;
+    margin-left: 220px;
+}
+
+.forca {
+    background-image: url(./img/forcabkg.png);
+    background-repeat: no-repeat;
+    min-width: 400px;
+    height: 350px;
+    background-size: 100% 100%;
+    /* position: fixed; */
+}
+
+.container-forca {
+    display: flex;
+    margin-top: 200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 50vh;
+}
+
+
+.palavra {
+    display: flex;
+    font-size: 45px;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.palavra h1 {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.chutes {
+    display: none;
+    font-size: 28px;
+}
+
+.div-iniciar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
