@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    async function getData() {
+        //pegando dados
+        let response = await fetch("./pratos.json");
+        let data = await response.json();
+        console.log("Todos os items json externo (Fetch) com print bonitinho: ")
+
+        //printando bonitinho
+        data.printBonitinho(function(c, i, array) {
+            console.log(i, c.nome, c.tipo);
+        });
+
+        //filtrando por tipo de prato usando o filter
+        let sushis = filtrartipo(data, "sushi");
+        console.log("Somente sushis (Filter)")
+        sushis.printBonitinho(function(c, i, array) {
+            console.log(i, c.nome, c.preco_m);
+        });
+
+        //descontos usando map
+        console.log("Sushis com desconto no tamanho médio (Map e Spread Operator)")
+        sushis = descontoM(sushis);
+        sushis.printBonitinho(function(c, i, array) {
+            console.log(i, c.nome, c.preco_m);
+        }, sushis);
+
+        //combo de salmão usando o reduce
+        console.log("Combo Salmão (Reduce)")
+        let salmao = combosalmao(data);
+        console.log(salmao);
+
+        //print nome dos pratos do combo com recursividade
+        console.log("Nome dos pratos do combo Salmão (Recursividade): ");
+        let rec = recursivoNomes(data, data.length);
+        console.log(rec)
+
+
+        // removendo pratos de sushi com prototype
+        console.log("Cardápio de quarta não tem sushi (Prototype e this)")
+        let cardapiodequarta = [...data];
+        cardapiodequarta = cardapiodequarta.removerTipo("sushi");
+        console.log("Cardápio de quarda", cardapiodequarta)
+
+        // verificando se o preco dos produtos esta em string
+        console.log("Preços do cardapio de quarta estão em string? (every) ", cardapiodequarta.every(isString), cardapiodequarta);
+        console.log("Preços do combo salmão estão em string? (every) ", salmao.Produtos.every(isString), salmao.Produtos);
+    }
+
+    // Prototype 1 e this
+    Array.prototype.printBonitinho = function(func, thisArg) {
+        for (let i = 0; i < this.length; i++) {
+            func.call(thisArg, this[i], i, this);
+        }
+    }
+
+    // Prototype 2 e this
+    Array.prototype.removerTipo = function(tipo, thisArg) {
+        novoarray = this.filter(function(x) {
+            return x.tipo != tipo;
+        });
+        return novoarray;
+
+    }
+
+    // Map
+    function descontoM(array) {
+        return array.map((item) => ({
+            ...item,
+            preco_m: descontar(item.preco_m, 0.15)
+        }));
+    }
+
+    // Filter
+    function filtrartipo(array, termo) {
+        return array.filter(x => x.tipo == termo);
+    }
+
+    // Reduce e Spread Operator
+    function combosalmao(array) {
+        let produtos = array.reduce((soma, item) => item.nome.includes('Salmão') ? [...soma, {
+            nome: item.nome,
+            preco: precotoFloat(item.preco_m)
+        }] : soma, []);
+
+        let preco = produtos.reduce((somatoria, item) => somatoria + item.preco, 0);
+        preco = preco - (preco * 0.25);
+        let combo = {
+            "Produtos": produtos,
+            "Preço": precotoString(preco.toFixed(2))
+        }
+        return combo;
+    }
+
+    // Recursividade
+    function recursivoNomes(array, n) {
+        if (n - 1 < 0 || isNaN(n - 1)) return "Pratos do Combo: ";
+        let nome = array[n - 1].nome;
+        return (nome.includes('Salmão')) ? recursivoNomes(array, n - 1) + `${nome}, ` : recursivoNomes(array, n - 1);
+    }
+
+    // Every
+    function isString(element, index, array) {
+        return typeof element.preco_m === 'string';
+    }
+
+
+
+    // Funções só pra brincar com string e float
+    function descontar(preco, desconto) {
+        return ("R$ " + (parseFloat(preco.replace('R$ ', '').replace(',', '.')) - (parseFloat(preco.replace('R$ ', '').replace(',', '.')) * desconto)).toFixed(2).replace('.', ','));
+    }
+
+    function precotoFloat(preco) {
+        return parseFloat(preco.replace('R$ ', '').replace(',', '.'));
+    }
+
+    function precotoString(preco) {
+        return ("R$ " + preco).replace('.', ',');
+    }
+
+
+
+    getData();
+
+</script>
+
+</html>

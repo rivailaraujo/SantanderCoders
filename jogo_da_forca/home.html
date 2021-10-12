@@ -134,6 +134,43 @@
             document.getElementById("palavra").innerHTML = "";
         }
 
+        function sleep(ms) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve();
+                }, ms);
+            })
+        }
+
+        function temLetraNoArray(letra, array) {
+            let temLetra = false
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] == letra) {
+                    temLetra = true
+                    arraychute[i] = letra;
+                    alterarEspaco(i, letra);
+                }
+            }
+            return temLetra;
+        }
+
+        function restaurarBoneco() {
+            document.getElementById("cabeca").style.display = "none";
+            document.getElementById("corpo").style.display = "none";
+            document.getElementById("brsesquerdo").style.display = "none";
+            document.getElementById("brsdireito").style.display = "none";
+            document.getElementById("pernaesquerda").style.display = "none";
+            document.getElementById("pernadireita").style.display = "none";
+        }
+
+        function restaurarDivs() {
+            document.getElementById("div-buttom-iniciar").style.display = "none";
+            document.getElementById("div-p-iniciar").style.display = "none";
+            document.getElementById("chutes").style.display = "block";
+            document.getElementById("chutes").innerHTML = "Chutes: ";
+            document.getElementById("palavra").innerHTML = "";
+        }
+
         let palavra = await getPalavra();
         let temp = palavra
         palavra = removerAcentosEspaco(palavra);
@@ -169,47 +206,9 @@
 
         let i = 0;
         const arraypalavra = Array.from(palavra);
-        const arraychute = new Array(arraypalavra.length)
-        const chutes = []
-        let erros = 0
-
-
-        function sleep(ms) {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    resolve();
-                }, ms);
-            })
-        }
-
-        function temLetraNoArray(letra, array) {
-            let temLetra = false
-            for (let i = 0; i < array.length; i++) {
-                if (array[i] == letra) {
-                    temLetra = true
-                    arraychute[i] = letra;
-                    alterarEspaco(i, letra);
-                }
-            }
-            return temLetra
-        }
-
-        function restaurarBoneco() {
-            document.getElementById("cabeca").style.display = "none";
-            document.getElementById("corpo").style.display = "none";
-            document.getElementById("brsesquerdo").style.display = "none";
-            document.getElementById("brsdireito").style.display = "none";
-            document.getElementById("pernaesquerda").style.display = "none";
-            document.getElementById("pernadireita").style.display = "none";
-        }
-
-        function restaurarDivs() {
-            document.getElementById("div-buttom-iniciar").style.display = "none";
-            document.getElementById("div-p-iniciar").style.display = "none";
-            document.getElementById("chutes").style.display = "block";
-            document.getElementById("chutes").innerHTML = "Chutes: ";
-            document.getElementById("palavra").innerHTML = "";
-        }
+        const arraychute = new Array(arraypalavra.length);
+        const chutes = [];
+        let erros = 0;
 
         let letra;
         while ((JSON.stringify(arraypalavra) !== JSON.stringify(arraychute)) && (erros < 6)) {

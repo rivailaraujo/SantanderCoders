@@ -1,0 +1,190 @@
+[{
+        "nome": "Temaki de Salmão com Cebolinha",
+        "descricao": "Uma opção de temaki tradicional, essa é a receita ideal. Aqui o prato é preparado apenas com nori, salmão e cebolinha.",
+        "img": "./imgs/temaki_salmao.jpg",
+        "tipo": "temaki",
+        "preco_p": "R$ 14,99",
+        "preco_m": "R$ 18,99",
+        "preco_g": "R$ 20,99"
+    },
+    {
+        "nome": "Temaki de Salmão com Ricota",
+        "descricao": "A combinação de salmão com creme de ricota pode até ser um pouco inusitada no preparo desse prato de origem oriental, mas o resultado pode ser muito saboroso.",
+        "img": "./imgs/temaki_salmao_ricota.jpg",
+        "tipo": "temaki",
+        "preco_p": "R$ 14,99",
+        "preco_m": "R$ 18,99",
+        "preco_g": "R$ 20,99"
+    },
+    {
+        "nome": "Temaki Skin",
+        "descricao": "Para quem não quer comer peixe cru, o skin pode ser uma ótima opção, pois o recheio é feito com pele de salmão frita.",
+        "img": "./imgs/temaki_skin.jpg",
+        "tipo": "temaki",
+        "preco_p": "R$ 14,99",
+        "preco_m": "R$ 18,99",
+        "preco_g": "R$ 20,99"
+    },
+    {
+        "nome": "Temaki de Salmão com Cream Cheese",
+        "descricao": "Essa é outra opção que agrada muitos paladares, aqui, o recheio é composto por pedacinhos de salmão, cebolinha e uma quantidade generosa de cream cheese.",
+        "img": "./imgs/temaki_salmao_cream_cheese.jpg",
+        "tipo": "temaki",
+        "preco_p": "R$ 14,99",
+        "preco_m": "R$ 18,99",
+        "preco_g": "R$ 20,99"
+    },
+    {
+        "nome": "Temaki de Salmão com Pepino",
+        "descricao": "Se você está buscando uma receita que leve salmão, mas que seja mais incrementada, essa pode ser a escolha certa. Aqui o peixe entra em cena junto com cream cheese, cebolinha e pepino.",
+        "img": "./imgs/temaki_salmao_pepino.jpg",
+        "tipo": "temaki",
+        "preco_p": "R$ 14,99",
+        "preco_m": "R$ 18,99",
+        "preco_g": "R$ 20,99"
+    },
+    {
+        "nome": "Nigiri",
+        "descricao": "'niguiri', o bolinho de arroz é amassado na mão e sua preparação leva wasabi, que nada mais é que um tempero com espessura pastosa e picante, muito utilizada na culinária oriental. Também conhecido por raiz forte. O peixe usado neste sushi pode variar com a época do ano, mas os mais utilizados são: salmão, linguado, pargo, peixe-galo e robalo.",
+        "img": "./imgs/nigiri.jpg",
+        "tipo": "sushi",
+        "preco_p": "R$ 13,99",
+        "preco_m": "R$ 17,99",
+        "preco_g": "R$ 19,99"
+    },
+    {
+        "nome": "Gunkan",
+        "descricao": "Feito com arroz e enrolado com nori, o gunkan leva o recheio no topo do rolinho e não no meio como a maioria das peças.",
+        "img": "./imgs/gunkan.jpg",
+        "tipo": "sushi",
+        "preco_p": "R$ 13,99",
+        "preco_m": "R$ 17,99",
+        "preco_g": "R$ 19,99"
+    },
+    {
+        "nome": "Temaki de Salmão com Couve",
+        "descricao": "Couve frita, que dá um toque crocante ao prato. O cream cheese também entra em cena para incrementar o gostinho do temaki que tem como ingredientes principais o arroz e o salmão.",
+        "img": "./imgs/temaki_de_salmao_com_couve.jpg",
+        "tipo": "temaki",
+        "preco_p": "R$ 14,99",
+        "preco_m": "R$ 18,99",
+        "preco_g": "R$ 20,99"
+    },
+    {
+        "nome": "Temaki de Cenoura e Pepino com Missô",
+        "descricao": "Tem como ingredientes principais a cenoura e o pepino, mas que tem um toque de missô que faz toda a diferença no sabor final do prato.",
+        "img": "./imgs/temaki_de_cenoura_e_pepino_com_misso.jpg",
+        "tipo": "temaki",
+        "preco_p": "R$ 14,99",
+        "preco_m": "R$ 18,99",
+        "preco_g": "R$ 20,99"
+    },
+    {
+        "nome": "Temaki de Shimeji",
+        "descricao": "O shimeji também pode ser usado para o preparo de um temaki que deixa os peixes de lado. O legal é que o cogumelo é bem temperadinho e dá um super toque de sabor ao prato.",
+        "img": "./imgs/temaki_de_cenoura_e_pepino_com_misso.jpg",
+        "tipo": "temaki",
+        "preco_p": "R$ 14,99",
+        "preco_m": "R$ 18,99",
+        "preco_g": "R$ 20,99"
+    },
+    {
+        "nome": "Hossomaki",
+        "descricao": "Hossomaki é o sushi tradicional, enrolado com a alga por fora, com o arroz e o recheio por dentro.",
+        "img": "./imgs/hossomaki.jpg",
+        "tipo": "sushi",
+        "preco_p": "R$ 13,99",
+        "preco_m": "R$ 17,99",
+        "preco_g": "R$ 19,99"
+    },
+    {
+        "nome": "Uramaki",
+        "descricao": "O uramaki é o sushi em que a alga fica por dentro e o arroz por fora, por isso, é importante prestar atenção na maneira em que o sushi deve ser enrolado",
+        "img": "./imgs/uramaki.jpg",
+        "tipo": "sushi",
+        "preco_p": "R$ 13,99",
+        "preco_m": "R$ 17,99",
+        "preco_g": "R$ 19,99"
+    },
+    {
+        "nome": "Hot Roll",
+        "descricao": "O hot roll é o sushi empanado, aquele que a gente pede quando ainda não está acostumado a comer peixe cru",
+        "img": "./imgs/hotroll.jpg",
+        "tipo": "sushi",
+        "preco_p": "R$ 13,99",
+        "preco_m": "R$ 17,99",
+        "preco_g": "R$ 19,99"
+    },
+    {
+        "nome": "Joe",
+        "descricao": "Também chamados de Joe, Djô, Jow ou Djow. Não importa a grafia:o grande destaque está na forma como ele é feito, já que é uma das raras peças que não levam folhas de nori em sua preparação.",
+        "img": "./imgs/joe.jpg",
+        "tipo": "sushi",
+        "preco_p": "R$ 13,99",
+        "preco_m": "R$ 17,99",
+        "preco_g": "R$ 19,99"
+    },
+    {
+        "nome": "Yakisoba de Carne com 3 Legumes",
+        "descricao": "Macarrão, carne, brócolis, couve-flor, cenoura, shoyu, gengibre e óleo de gergelim",
+        "img": "./imgs/yakisoba_de_carne_com_3_legumes.jpg",
+        "tipo": "yakisoba",
+        "preco_p": "R$ 13,99",
+        "preco_m": "R$ 17,99",
+        "preco_g": "R$ 19,99"
+    },
+    {
+        "nome": "Yakisoba de Frango Picante",
+        "descricao": "Prato rápido, nutritivo e saboroso. O toque da pimenta é bem marcante.",
+        "img": "./imgs/yakisoba_de_frango_picante.jpg",
+        "tipo": "yakisoba",
+        "preco_p": "R$ 16,99",
+        "preco_m": "R$ 21,99",
+        "preco_g": "R$ 24,99"
+    },
+    {
+        "nome": "Yakisoba de Carne",
+        "descricao": "Tradicional de origem chinesa, que tem como acréscimo a carne.",
+        "img": "./imgs/yakisoba_de_carne.jpg",
+        "tipo": "yakisoba",
+        "preco_p": "R$ 16,99",
+        "preco_m": "R$ 21,99",
+        "preco_g": "R$ 24,99"
+    },
+    {
+        "nome": "Yakisoba Vegetariano",
+        "descricao": "Cogumelo paris no prato para dar um toque a mais aos legumes e macarrão com shoyu",
+        "img": "./imgs/yakisoba_vegetariano.jpg",
+        "tipo": "yakisoba",
+        "preco_p": "R$ 16,99",
+        "preco_m": "R$ 21,99",
+        "preco_g": "R$ 24,99"
+    },
+    {
+        "nome": "Yakisoba de Carne e Frango",
+        "descricao": "Sabor da carne de frango e da carne de boi aos legumes e o macarrão",
+        "img": "./imgs/yakisoba_de_carne_frango.jpg",
+        "tipo": "yakisoba",
+        "preco_p": "R$ 16,99",
+        "preco_m": "R$ 21,99",
+        "preco_g": "R$ 24,99"
+    },
+    {
+        "nome": "Yakisoba Misto",
+        "descricao": "Uma receita que usa carne de boi, de frango e cogumelos, por isso seu nome é misto.",
+        "img": "./imgs/yakisoba_misto.jpg",
+        "tipo": "yakisoba",
+        "preco_p": "R$ 16,99",
+        "preco_m": "R$ 21,99",
+        "preco_g": "R$ 24,99"
+    },
+    {
+        "nome": "Yakisoba Vegano",
+        "descricao": "Receita bem simples, feito com poucos legumes com macarrão sem ovos.",
+        "img": "./imgs/yakisoba_vegano.jpg",
+        "tipo": "yakisoba",
+        "preco_p": "R$ 16,99",
+        "preco_m": "R$ 21,99",
+        "preco_g": "R$ 24,99"
+    }
+]

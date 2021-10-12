@@ -75,6 +75,17 @@ body {
     min-height: 50vh;
 }
 
+@-moz-document url-prefix() {
+    .container-forca {
+        display: flex;
+        margin-top: 0px;
+        justify-content: left;
+        align-items: left;
+        text-align: center;
+        min-height: 50vh;
+    }
+}
+
 
 .palavra {
     display: flex;
