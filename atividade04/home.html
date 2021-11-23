@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade 4</title>
+    <h1>Abre o console ai meu consagrado!</h1>
 </head>
 
 <body>
@@ -15,7 +16,9 @@
 <script>
     async function getData() {
         //pegando dados
-        let response = await fetch("./pratos.json");
+        //let response = await fetch("./pratos.json"); json local
+        // json remoto
+        let response = await fetch("https://raw.githubusercontent.com/rivailaraujo/SantanderCoders/main/atividade04/pratos.json");
         let data = await response.json();
         console.log("Todos os items json externo (Fetch) com print bonitinho: ")
 

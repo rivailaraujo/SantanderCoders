@@ -1,0 +1,10 @@
+<mat-selection-list #shoes style="background-color: white;">
+  <mat-list-option *ngFor="let shoe of typesOfShoes">
+    <button (click)="openDialog()">{{shoe}}</button>
+  </mat-list-option>
+</mat-selection-list>
+
+<p>
+  Options selected: {{shoes.selectedOptions.selected.length}}
+
+</p>
