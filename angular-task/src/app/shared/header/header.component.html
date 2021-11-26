@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span [routerLink]="['']" style="cursor: pointer;">Task Manager</span>
+    <span class="header-spacer"></span>
+    <div *ngIf="!getAuth()">
+
+      <button mat-raised-button appButtomColor backgroudColor='#ff4081' textColor="white" style=" margin-right: 3px;"
+        *ngIf="this.router.url == '/cadastro'" [routerLink]="['/cadastro']">Cadastrar</button>
+
+      <button mat-raised-button appButtomColor backgroudColor='white' textColor="black" style=" margin-right: 3px;"
+        *ngIf="this.router.url != '/cadastro'" [routerLink]="['/cadastro']">Cadastrar</button>
+
+      <button mat-raised-button appButtomColor backgroudColor='#ff4081' textColor="white" style=" margin-right: 3px;"
+        *ngIf="this.router.url == '/login'" [routerLink]="['/login']">Login</button>
+
+      <button mat-raised-button appButtomColor backgroudColor='white' textColor="black" style=" margin-right: 3px;"
+        *ngIf="this.router.url != '/login'" [routerLink]="['/login']">Login</button>
+
+    </div>
+
+    <div *ngIf="getAuth()">
+      <button mat-raised-button color='accent' (click)="logOut()">Sair</button>
+    </div>
+
+  </mat-toolbar-row>
+
+</mat-toolbar>

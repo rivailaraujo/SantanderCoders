@@ -2,3 +2,18 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #ededed;}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  max-width: 1080px;
+  width: 75%;
+  margin: auto;
+}
+
+.mt-3{
+  margin-top: 1.0em;
+}
+.mt-b{
+  margin-bottom: 1.0em;
+}

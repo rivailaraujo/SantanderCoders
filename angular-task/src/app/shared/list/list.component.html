@@ -1,10 +1,14 @@
-<mat-selection-list #shoes style="background-color: white;">
-  <mat-list-option *ngFor="let shoe of typesOfShoes">
-    <button (click)="openDialog()">{{shoe}}</button>
-  </mat-list-option>
-</mat-selection-list>
+<!-- <mat-card>
+  <mat-selection-list #shoes>
+    <mat-list-option *ngFor="let task of tasks$ | async">
+      <button (click)="openDialog(); $event.stopPropagation()">{{task.name}}</button>
+    </mat-list-option>
+  </mat-selection-list>
+</mat-card> -->
+<app-table *ngIf="this.tasks$ | async as tasks" [data]="tasks" (alteredDeleteTask)="refreshList()"
+  (alteredDoneTask)="refreshList()"></app-table>
 
-<p>
+<!-- <p>
   Options selected: {{shoes.selectedOptions.selected.length}}
 
-</p>
+</p> -->

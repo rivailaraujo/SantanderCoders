@@ -1,0 +1,69 @@
+{
+  "users": [
+    {
+      "name": "rivail",
+      "email": "araujorivail@outlook.com",
+      "password": "1234",
+      "id": "0a3459dd-18da-4ef9-b087-94eab17e5b3c"
+    },
+    {
+      "name": "rivail",
+      "email": "araujorivail@gmail.com",
+      "password": "1234",
+      "id": "270f4fb7-ee15-41e1-9ebe-46ef3228cd70"
+    },
+    {
+      "name": "rivail",
+      "email": "araujorivail@hotmail.com",
+      "password": "1234",
+      "id": "7beda635-576c-4a00-b36a-1cdd5ad4131c"
+    }
+  ],
+  "tasks": [
+    {
+      "name": "Cortar o cabelo",
+      "description": "Ir ao centro",
+      "dueData": "2021-11-30T03:00:00.000Z",
+      "priority": "Low",
+      "user_id": "0a3459dd-18da-4ef9-b087-94eab17e5b3c",
+      "id": "f919c943-95fd-4fac-b6f5-bc9027fa4f39",
+      "done": false
+    },
+    {
+      "name": "Nova tarefa",
+      "description": "testando",
+      "dueData": "2021-11-27T03:00:00.000Z",
+      "priority": "Medium",
+      "id": "b8da008c-e91e-4890-827b-baefffe8a779",
+      "done": false,
+      "user_id": "0a3459dd-18da-4ef9-b087-94eab17e5b3c"
+    },
+    {
+      "name": "novonome4",
+      "description": "descricao 54",
+      "dueData": "2021-11-27T03:00:00.000Z",
+      "priority": "High",
+      "done": false,
+      "user_id": "0a3459dd-18da-4ef9-b087-94eab17e5b3c",
+      "id": "e373e76f-73ec-4343-906b-713ecb33d1a1"
+    },
+    {
+      "name": "Compra algo",
+      "description": "Aproveitar a black fraude",
+      "dueData": "2021-11-26T03:00:00.000Z",
+      "priority": "High",
+      "id": "77e81ce4-6812-4342-b699-da3151895702",
+      "done": false,
+      "user_id": "0a3459dd-18da-4ef9-b087-94eab17e5b3c"
+    },
+    {
+      "name": "Fazer as compras do mês",
+      "description": "Ir no supermercado mais barato",
+      "dueData": "2021-11-25T03:00:00.000Z",
+      "priority": "Medium",
+      "id": "9a34d1c2-f8da-4f89-a9f2-3cd22b2198e6",
+      "done": false,
+      "user_id": "0a3459dd-18da-4ef9-b087-94eab17e5b3c"
+    }
+  ]
+}

@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { SharedModule } from './shared/shared.module';
     BrowserAnimationsModule,
     SharedModule,
     PagesModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

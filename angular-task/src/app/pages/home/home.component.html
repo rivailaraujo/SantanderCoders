@@ -1,4 +1,10 @@
 <div class="container">
-  <h1 style="text-align: center;">Tarefas</h1>
-  <app-list-task></app-list-task>
+  <mat-card class="user-info">
+    <h1 *ngIf="this.data" style="text-align: center;">Tarefas de <strong>{{this.data.email}}</strong></h1>
+    <div class="create-task">
+      <button mat-raised-button color="primary" style="margin-right: 3px;" [routerLink]="['/create']">Criar
+        Tarefa</button>
+    </div>
+  </mat-card>
+  <app-list-task [userID]="this.userID"></app-list-task>
 </div>

@@ -1,7 +1,9 @@
-.container{
+.user-info{
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.create-task{
   display: flex;
-  flex-direction: column;
-  max-width: 1080px;
-  width: 75%;
-  margin: auto;
+  justify-content: space-evenly;
 }

@@ -1,5 +1,8 @@
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Component, Input, OnInit } from '@angular/core';
+import { Task } from '../../models/task.model';
+import { TasksService } from './../../services/tasks.service';
+import { Observable } from 'rxjs';
 
 export interface DialogData {
   animal: 'panda' | 'unicorn' | 'lion';
@@ -10,25 +13,37 @@ export interface DialogData {
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent {
+export class ListComponent implements OnInit {
+  @Input() userID?: string;
   typesOfShoes: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
+  tasks?: Array<Task>
+  tasks$?: Observable<Array<Task>>;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(private taskService: TasksService) { }
 
-  openDialog() {
-    this.dialog.open(DialogDataExampleDialog, {
-      data: {
-        animal: 'panda',
-      },
-    });
+  ngOnInit(): void {
+    this.getTasks();
   }
 
+
+  getTasks() {
+    console.log('entrou')
+    if (this.userID) {
+      this.tasks$ = this.taskService.getTaskUser(this.userID);
+    }
+
+    // if (this.userID) {
+    //   this.taskService.getTaskUser(this.userID)
+    //     .subscribe(
+    //       data => {
+    //         this.tasks = data;
+    //         console.log(this.tasks)
+    //       }
+    //     )
+    // }
+  }
+  refreshList() {
+    this.getTasks();
+  }
 }
 
-@Component({
-  selector: 'dialog-data-example-dialog',
-  templateUrl: './dialog-data-example-dialog.html',
-})
-export class DialogDataExampleDialog {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) { }
-}
